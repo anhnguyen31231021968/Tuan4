@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      .khoa {
+        display: inline-block; /* để transform & background áp dụng gọn */
+        background: #0b74da; /* xanh lúc bình thường */
+        color: #fff;
+        font-size: 20px; /* 20px lúc bình thường */
+        padding: 6px 10px;
+        transform: matrix(1, 0, 0, 1, 0, 0); /* identity */
+        transform-origin: center;
+        transition: background-color 300ms ease, font-size 300ms ease,
+          transform 300ms ease;
+      }
+
+      .khoa:hover {
+        background: #e11919; /* đỏ khi hover */
+        font-size: 50px; /* 50px khi hover */
+        transform: matrix(1.4, -0.54, 0.54, 1.4, 0, 0);
+      }
+
+      /* Tôn trọng người dùng giảm chuyển động */
+      @media (prefers-reduced-motion: reduce) {
+        .khoa {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <span class="khoa">Khoa CNTTKD</span>
+  </body>
+</html>
