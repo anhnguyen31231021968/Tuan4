@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tổng hợp bài tập - Tuần 3</title>
+
+    <!-- Thêm Animate.css từ CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #16a34a; /* xanh lá */
+        --primary-weak: #dcfce7;
+        --text: #111827;
+        --muted: #6b7280;
+        --card: #fff;
+        --border: #e5e7eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+      }
+      .container {
+        max-width: 960px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 28px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        animation: fadeIn 1s ease; /* Thêm hiệu ứng fadeIn khi load trang */
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 16px;
+        animation: fadeInUp 1.2s ease-out; /* Hiệu ứng cho header */
+      }
+      header img {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      header .info h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 22px;
+      }
+      header .info p {
+        margin: 4px 0 0;
+        color: var(--muted);
+      }
+      .social {
+        margin-left: auto;
+        display: flex;
+        gap: 12px;
+      }
+      .social a {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: #f9fafb;
+        color: #111;
+        border: 1px solid var(--border);
+        text-decoration: none;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+      .social a:hover {
+        background: var(--primary-weak);
+        color: var(--primary);
+      }
+      h2 {
+        margin: 22px 0 14px;
+        color: #222;
+        text-align: center;
+        animation: zoomIn 1s ease-in-out; /* Hiệu ứng cho h2 */
+      }
+
+      /* Lưới 3 cột cố định */
+      ul.links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      @media (max-width: 900px) {
+        ul.links {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        ul.links {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      ul.links li {
+        background: #f7f8fa;
+        border: 1px solid #eceff3;
+        border-radius: 10px;
+        padding: 16px;
+        transition: transform 0.18s ease, background 0.18s ease,
+          border-color 0.18s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      ul.links li:hover {
+        transform: translateY(-3px);
+        background: var(--primary-weak);
+        border-color: var(--primary);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        animation: pulse 1s infinite; /* Hiệu ứng pulse khi hover vào bài tập */
+      }
+      ul.links a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      ul.links a .left {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        color: var(--primary);
+      }
+
+      /* Thêm animation khi hover vào bài tập */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Thông tin cá nhân -->
+      <header>
+        <img
+          src="https://i.pinimg.com/736x/c0/1c/43/c01c43422cde952dd3ced914dfb14aba.jpg"
+          alt="Ảnh cá nhân"
+        />
+        <div class="info">
+          <h1>Nguyễn Văn A</h1>
+          <p>
+            Sinh viên UEH - Khoa Công Nghệ Thông Tin Kinh Doanh - Tổng hợp bài
+            tập tuần 4
+          </p>
+        </div>
+        <nav class="social">
+          <a href="mailto:anhnguyen.31231021968@st.euh.edu.vn" title="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/kim.anh.192976"
+            target="_blank"
+            rel="noopener"
+            title="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://github.com/anhnguyen31231021968"
+            target="_blank"
+            rel="noopener"
+            title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+        </nav>
+      </header>
+
+      <!-- Danh sách bài tập -->
+      <h2><i class="fas fa-book-open"></i> Danh sách bài tập</h2>
+      <ul class="links">
+        <li>
+          <a href="BaiTap1.html"
+            ><span class="left"><i class="fas fa-university"></i> Bài 2A</span
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </li>
+        <li>
+          <a href="BaiTap2a.html"
+            ><span class="left"><i class="fas fa-laptop-code"></i> Bài 2B</span
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </li>
+        <li>
+          <a href="BaiTap2b.html"
+            ><span class="left"><i class="fas fa-fire"></i> Bài 2C</span
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </li>
+        <li>
+          <a href="BaiTap2c.html"
+            ><span class="left"><i class="fas fa-image"></i> Bài 2D</span
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </li>
+        <li>
+          <a href="BaiTap3.html"
+            ><span class="left"><i class="fas fa-ellipsis-h"></i> Bài 2E</span
+            ><i class="fas fa-external-link-alt"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
